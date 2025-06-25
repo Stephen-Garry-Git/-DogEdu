@@ -1,0 +1,462 @@
+/* Reset margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  background-color: #360259; 
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #F26B1D; /* Highlight on hover */
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.search-box button {
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+
+
+/* Big and Bold Title */
+.hero-content h1 {
+  font-size: 3.5rem;     /* Very large heading */
+  font-weight: 900;      /* Maximum boldness */
+  color: #fdfdfd;        /* Dark gray color */
+  margin-bottom: 20px;
+}
+
+/* Large and Clear Paragraph */
+.hero-content p {
+  font-size: 1.7rem;     /* Larger than normal text */
+  font-weight: 600;      /* Semi-bold */
+  color: white;        /* Medium gray for readability */
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Big, Bold, and Attractive Button */
+.hero-content .btn {
+  display: inline-block;
+  font-size: 1.5rem;      /* Big button text */
+  font-weight: 700;       /* Bold */
+  background-color: #360259;  /* Bright orange background */
+  color: #ffffff;         /* White text */
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+.hero-section{
+  position: relative;
+  height: 100vh;
+  background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("1000259270 (1).webp")
+  no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-section .btn{
+  display: inline;
+  background-color: #360259;
+  color: white;
+  padding: 15px 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 3px 25px 3px 25px;
+  transition: background-color 0.3s ease;
+
+}
+.hero-section .btn:hover{
+  color: #F26B1D;
+}
+.hero-section a{
+  float: right;
+}
+
+
+/* Featured Breeds Section */
+
+.featured-breeds, .care-tips-preview{
+  padding: 50px;
+  /*background-color: ;*/
+  text-align: center;
+}
+.featured-breeds h2, .care-tips-preview h2{
+  margin-bottom: 40px;
+  color: #333;
+}
+.breed-grid, .care-tips-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+.breed-card{
+  border: 1px solid #360259;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0.4, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;;
+}
+ .care-tips-card{
+  border: 1px solid #360259;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0.4, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+.breed-card:hover{
+  transform: translateY(-10px) scale(1.10);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+ .care-tips-card:hover{
+  transform: translateY(-5px);
+  /*box-shadow: 5px #360259;*/
+}
+
+
+
+.breed-card img, .care-tips-card img {
+    max-width: 100%;
+    height: 180px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers area without distorting */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.breed-card h3{
+  margin-top: 0;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+ .tip-card h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.breed-card p, .tip-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.breed-attribute{
+  height: 0; /* Initially hide by setting height to 0 */
+    opacity: 0; /* Also make it transparent */
+    overflow: hidden; /* Hide content that goes beyond height:0 */
+    transition: height 0.4s ease-out, opacity 0.4s ease-out, margin-top 0.4s ease-out; /* Smooth transition */
+    margin-top: 0; /* Initially no top margin */
+    padding-top: 0; /* Initially no padding */
+}
+
+.breed-card:hover .breed-attribute {
+    height: auto; /* Reveal by setting height to auto */
+    opacity: 1; /* Make it visible */
+    margin-top: 15px; /* Add some space above it */
+    padding-top: 10px; /* Add some padding inside */
+    border-top: 1px solid #eee; /* Optional: a subtle separator */
+}
+
+.breed-attribute ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align text to the left within the card */
+    font-size: 0.9em;
+    color: #555;
+}
+
+.breed-attribute ul li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+.breed-attribute ul li strong {
+    color: #333; /* Make the attribute name stand out */
+}
+
+/* Ensure the learn more button is visible below revealed content */
+.learn-more-btn {
+    display: inline-block; /* Essential for proper display */
+    margin-top: 20px; /* Space from content above */
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+
+
+.breed-card a, .tip-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tip-card a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* Why Dogs Section */
+.why-dogs {
+  background-color: #fdfdfd;
+  color: #222;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+  font-family: Arial, sans-serif;
+}
+
+.why-dogs h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #3b3b3b;
+}
+
+.why-dogs h3 {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  color: #444;
+}
+
+.why-dogs ol {
+  padding-left: 20px;
+}
+
+.why-dogs li {
+  font-weight: bold;
+  margin-top: 20px;
+  color: #000;
+}
+
+.why-dogs p {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+
+/* --- Footer Styles (Update this section) --- */
+footer {
+    background-color: #333; /* Dark background for the footer */
+    color: white;
+    padding: 30px 0; /* Vertical padding */
+    text-align: center; /* Default text alignment */
+}
+
+/* Adjust .background-container within the footer to use flexbox */
+footer .background-container {
+    max-width: 1200px; /* Match your overall container width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Padding inside the container */
+
+    display: flex; /* Enable flexbox for footer items */
+    flex-direction: column; /* Stack items vertically by default (for mobile) */
+    align-items: center; /* Center items horizontally in column layout */
+    gap: 25px; /* Space between the main footer sections (nav, newsletter, social) */
+}
+
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Make list items arrange horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
+    justify-content: center; /* Center nav links */
+    gap: 15px; /* Space between nav links */
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    color: #007bff; /* Highlight nav links on hover */
+}
+
+/* --- Styles for the Newsletter inside the Footer --- */
+.footer-newsletter {
+    background-color: #444; /* Slightly lighter background for the form block */
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; /* Take full width within its container */
+    max-width: 450px; /* Limit its max width */
+    text-align: center; /* Center text within the newsletter block */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+.footer-newsletter h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em; /* Make title prominent */
+}
+
+.footer-newsletter p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    color: #ccc; /* Lighter text color */
+}
+
+.footer-newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between input and button */
+    flex-wrap: wrap; /* Allow input/button to wrap on small screens */
+}
+
+.footer-newsletter input[type="email"] {
+    flex-grow: 1; /* Input takes up available space */
+    padding: 12px 15px; /* More padding for a nicer feel */
+    border: 1px solid #666; /* Subtle border */
+    border-radius: 5px;
+    background-color: #555; /* Input background */
+    color: white;
+    min-width: 180px; /* Ensure input doesn't get too small */
+}
+
+.footer-newsletter input[type="email"]::placeholder {
+    color: #aaa; /* Placeholder text color */
+}
+
+.footer-newsletter button {
+    background-color: #007bff; /* Distinct blue for subscribe button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase; /* Make button text stand out */
+}
+
+.footer-newsletter button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* --- Other Footer Elements (Add/Update) --- */
+.social-icons {
+    margin-top: 10px;
+    /* Styles for your social media icons go here */
+}
+
+.copyright {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-top: 15px;
+}
+
+/* --- Responsive adjustments for larger screens --- */
+@media (min-width: 768px) {
+    footer .background-container {
+        flex-direction: row; /* Arrange items in a row on larger screens */
+        justify-content: space-around; /* Distribute space around items */
+        align-items: flex-start; /* Align items to the top of the row */
+        text-align: left; /* Reset text alignment for horizontal layout */
+    }
+
+    footer nav ul {
+        flex-direction: column; /* Stack nav links vertically again */
+        align-items: flex-start; /* Align nav links to the left */
+        gap: 8px; /* Reduce gap for vertical list */
+    }
+
+    .footer-newsletter {
+        order: 2; /* Adjust order if needed (e.g., to be in the middle) */
+        text-align: left; /* Align text within newsletter block to the left */
+    }
+
+    .footer-newsletter form {
+        justify-content: flex-start; /* Align form elements to the left */
+    }
+
+    .social-icons {
+        order: 3; /* Example order */
+        margin-top: 0; /* Reset margin */
+    }
+
+    .copyright {
+        order: 4; /* Example order */
+        width: 100%; /* Make copyright span full width */
+        text-align: center; /* Center copyright notice */
+        margin-top: 25px; /* Add more space above copyright */
+        padding-top: 15px; /* Padding above the top border */
+        border-top: 1px solid rgba(255,255,255,0.1); /* Subtle separator line */
+    }
+}
+
+/* You might need to adjust the gap value in footer .background-container depending on how many
+   footer items you end up having (nav, newsletter, social, copyright) to get ideal spacing. */

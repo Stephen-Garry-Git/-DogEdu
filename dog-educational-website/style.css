@@ -1,0 +1,555 @@
+:root {
+    /* --- My Colors --- */
+    --my-dark-purple: #360259;
+    --my-highlight-orange: #F26B1D; /* Used for subtle hover effects */
+    --my-vibrant-orange: #ff6600; /* My main hover color for links and hero button background */
+    --my-white: #FFFFFF;
+    --my-off-white: #fdfdfd; /* For light backgrounds/text */
+    --my-dark-gray: #333;
+    --my-medium-gray: #666;
+    --my-medium-alt-gray: #555;
+    --my-light-gray: #ccc;
+    --my-lighter-gray: #aaa; /* For placeholders and copyright */
+    --my-black-transparent-50: rgba(0, 0, 0, 0.5); /* For image overlays */
+    --my-black-transparent-70: rgba(0, 0, 0, 0.7); /* For strong text shadows */
+    --my-black-transparent-60: rgba(0, 0, 0, 0.6); /* For text shadows */
+    --my-black-transparent-40: rgba(0, 0, 0, 0.4); /* For shadows */
+    --my-black-transparent-20: rgba(0, 0, 0, 0.2); /* For shadows */
+    --my-black-transparent-10: rgba(0, 0, 0, 0.1); /* For subtle shadows */
+    --my-border-light-gray: #eee;
+    --my-footer-background: #333;
+    --my-footer-newsletter-bg: #444;
+    --my-input-background-dark: #555;
+    --my-input-border-dark: #666;
+    --my-section-background-light: #fdfdfd; /* For Why Dogs section */
+    --my-text-color-darkest: #222;
+    --my-heading-dark: #3b3b3b;
+    --my-heading-medium: #444;
+    --my-black: #000; /* Pure black text */
+    --my-white-transparent-10: rgba(255,255,255,0.1); /* For footer top border */
+    --my-default-blue: #007bff; /* Original blue, for defaults if not orange hover */
+    --my-dark-blue: #0056b3; /* Darker blue, for defaults if not orange hover */
+
+
+    /* --- My Fonts --- */
+    --my-font-family-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --my-font-family-secondary: Arial, sans-serif; /* Used for why-dogs section */
+
+    /* --- My Spacing --- */
+    --my-space-xxs: 3px;
+    --my-space-xs: 5px;
+    --my-space-sm: 10px;
+    --my-space-md: 15px;
+    --my-space-lg: 20px;
+    --my-space-xl: 25px;
+    --my-space-2xl: 30px;
+    --my-space-3xl: 40px;
+    --my-space-4xl: 50px;
+
+    /* --- My Font Sizes --- */
+    --my-font-size-base: 1rem;
+    --my-font-size-sm: 0.9em;
+    --my-font-size-xs: 0.85em; /* For copyright text */
+    --my-font-size-xxs: 0.95em; /* For breed/tip card paragraphs */
+    --my-font-size-navbar-logo: 1.5rem;
+    --my-font-weight-navbar-link: 500; /* Font weight, not size */
+    --my-font-size-h2: 2rem;
+    --my-font-size-h3-lg: 1.5em; /* For footer newsletter heading */
+    --my-font-size-h3-md: 1.4rem; /* For Why Dogs h3 */
+
+    /* Hero Section Specific Font Sizes */
+    --my-font-size-hero-h1: 3.5rem;
+    --my-font-size-hero-p: 1.7rem;
+    --my-font-size-hero-btn: 1.5rem;
+
+    /* --- My Font Weights --- */
+    --my-font-weight-light: 300;
+    --my-font-weight-normal: 400;
+    --my-font-weight-medium: 500;
+    --my-font-weight-semi-bold: 600;
+    --my-font-weight-bold: 700;
+    --my-font-weight-extra-bold: 900;
+
+    /* --- My Border Radii --- */
+    --my-radius-sm: 3px;
+    --my-radius-md: 5px;
+    --my-radius-lg: 8px;
+    --my-radius-xl: 10px; /* For hero button */
+    --my-radius-2xl: 12px; /* For why-dogs section */
+    --my-radius-hero-btn-custom: 3px 25px 3px 25px; /* My specific custom radius if I prefer it */
+
+    /* --- My Transitions --- */
+    --my-transition-speed-fast: 0.3s;
+    --my-transition-speed-normal: 0.4s;
+    --my-transition-speed-medium: 0.2s;
+    --my-transition-ease-out: ease-out;
+    --my-transition-ease: ease;
+
+    /* --- My Box Shadows --- */
+    --my-shadow-card-default: 0 2px 5px var(--my-black-transparent-50);
+    --my-shadow-card-hover: 0 5px 15px var(--my-black-transparent-20);
+    --my-shadow-why-dogs: 0 4px 12px var(--my-black-transparent-10);
+    --my-shadow-footer-newsletter: 0 4px 8px var(--my-black-transparent-20);
+    --my-shadow-hero-btn: 0 4px 10px var(--my-black-transparent-40);
+
+    /* --- My Borders --- */
+    --my-border-card: 1px solid var(--my-dark-purple);
+    --my-border-input: 1px solid var(--my-input-border-dark);
+    --my-border-separator: 1px solid var(--my-border-light-gray);
+    --my-border-footer-separator: 1px solid var(--my-white-transparent-10);
+
+    /* --- My Grid --- */
+    --my-grid-gap: 30px;
+    --my-grid-min-col-width: 280px;
+}
+
+/* Reset my margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--my-font-family-body);
+}
+
+.navbar {
+    background-color: var(--my-dark-purple);
+    color: var(--my-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--my-space-sm) var(--my-space-lg);
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    font-size: var(--my-font-size-navbar-logo);
+    font-weight: var(--my-font-weight-bold);
+}
+
+.navbar .nav-links a {
+    color: var(--my-white);
+    text-decoration: none;
+    margin-left: var(--my-space-lg);
+    font-weight: var(--my-font-weight-medium);
+    transition: color var(--my-transition-speed-fast);
+}
+
+.navbar .nav-links a:hover {
+    color: var(--my-vibrant-orange); /* My consistent hover color */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--my-white);
+    border-radius: var(--my-radius-md);
+    padding: var(--my-space-xxs);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: var(--my-space-xs);
+    font-size: 14px; /* Kept as px for specific sizing */
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    font-size: 16px; /* Kept as px for specific sizing */
+    cursor: pointer;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(var(--my-black-transparent-50), var(--my-black-transparent-50)), url("1000259270 (1).webp")
+    no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--my-space-lg);
+    color: var(--my-white); /* Default text color for the hero section */
+}
+
+/* Big and Bold Title (H1 or H2 within my hero section) */
+.hero-section h1, .hero-section h2 {
+    font-size: var(--my-font-size-hero-h1);
+    font-weight: var(--my-font-weight-extra-bold); /* Maximum boldness */
+    color: var(--my-white); /* Making sure it's white for contrast */
+    margin-bottom: var(--my-space-lg);
+    text-shadow: 2px 2px 6px var(--my-black-transparent-70); /* Strong shadow for readability */
+    line-height: 1.2;
+}
+
+/* Large and Clear Paragraph (P within my hero section) */
+.hero-section p {
+    font-size: var(--my-font-size-hero-p);
+    font-weight: var(--my-font-weight-semi-bold); /* Semi-bold */
+    color: var(--my-white); /* Making sure it's white for contrast */
+    margin-bottom: var(--my-space-3xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 4px var(--my-black-transparent-60); /* Subtle shadow for my tagline */
+}
+
+/* Big, Bold, and Attractive Button (Button within my hero section) */
+.hero-section .btn {
+    display: inline-block;
+    font-size: var(--my-font-size-hero-btn);
+    font-weight: var(--my-font-weight-bold); /* Bold */
+    background-color: var(--my-vibrant-orange); /* My bright orange background */
+    color: var(--my-white); /* White text by default */
+    padding: var(--my-space-md) var(--my-space-2xl);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: var(--my-radius-xl); /* Using a clean 10px radius */
+    transition: background-color var(--my-transition-speed-fast) var(--my-transition-ease),
+                transform var(--my-transition-speed-medium) var(--my-transition-ease),
+                color var(--my-transition-speed-fast) var(--my-transition-ease); /* Added color transition */
+    box-shadow: var(--my-shadow-hero-btn);
+}
+
+.hero-section .btn:hover {
+    background-color: var(--my-highlight-orange); /* A darker orange background on hover */
+    transform: translateY(-3px); /* My button lifts on hover */
+    color: var(--my-vibrant-orange); /* My button text color on hover */
+}
+
+.hero-section a {
+    float: right; /* I might want to check this float if it causes layout issues for a central button */
+}
+
+
+/* Featured Breeds Section Styles */
+.featured-breeds, .care-tips-preview {
+    padding: var(--my-space-4xl);
+    /* background-color: ; */ /* This was empty, so I'm leaving it as is */
+    text-align: center;
+}
+.featured-breeds h2, .care-tips-preview h2 {
+    margin-bottom: var(--my-space-3xl);
+    color: var(--my-dark-gray);
+}
+.breed-grid, .care-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--my-grid-min-col-width), 1fr));
+    gap: var(--my-grid-gap);
+    justify-content: center;
+}
+.breed-card {
+    border: var(--my-border-card);
+    border-radius: var(--my-radius-lg);
+    padding: var(--my-space-lg);
+    text-align: center;
+    box-shadow: var(--my-shadow-card-default);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--my-transition-speed-fast) var(--my-transition-ease-out), box-shadow var(--my-transition-speed-fast) var(--my-transition-ease-out);
+}
+.care-tips-card {
+    border: var(--my-border-card);
+    border-radius: var(--my-radius-lg);
+    padding: var(--my-space-lg);
+    text-align: center;
+    box-shadow: var(--my-shadow-card-default);
+    transition: transform var(--my-transition-speed-fast) var(--my-transition-ease);
+}
+.breed-card:hover {
+    transform: translateY(-10px) scale(1.10);
+    box-shadow: var(--my-shadow-card-hover);
+}
+.care-tips-card:hover {
+    transform: translateY(-5px);
+    /* box-shadow: 5px #360259; */
+}
+
+.breed-card img, .care-tips-card img {
+    max-width: 100%;
+    height: 180px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-radius: var(--my-radius-md);
+    margin-bottom: var(--my-space-md);
+}
+
+.breed-card h3 {
+    margin-top: 0;
+    color: var(--my-default-blue); /* My default blue for heading */
+    margin-bottom: var(--my-space-sm);
+}
+.tip-card h3 { /* Using tip-card for now, I'll check my HTML if care-tips-card is preferred */
+    margin-top: 0;
+    color: var(--my-default-blue);
+}
+
+.breed-card p, .tip-card p { /* Using tip-card for now, I'll check my HTML if care-tips-card is preferred */
+    font-size: var(--my-font-size-xxs);
+    color: var(--my-medium-gray);
+    margin-bottom: var(--my-space-md);
+}
+
+.breed-attribute { /* REMINDER for myself: Check for 'breed-attribute' vs 'breed-attributes' in my HTML/CSS */
+    height: 0; /* Initially hide by setting height to 0 */
+    opacity: 0; /* Also make it transparent */
+    overflow: hidden; /* Hide content that goes beyond height:0 */
+    transition: height var(--my-transition-speed-normal) var(--my-transition-ease-out),
+                opacity var(--my-transition-speed-normal) var(--my-transition-ease-out),
+                margin-top var(--my-transition-speed-normal) var(--my-transition-ease-out); /* Smooth transition */
+    margin-top: 0; /* Initially no top margin */
+    padding-top: 0; /* Initially no padding */
+}
+
+.breed-card:hover .breed-attribute { /* REMINDER for myself: Check for 'breed-attribute' vs 'breed-attributes' in my HTML/CSS */
+    height: auto; /* Reveal by setting height to auto */
+    opacity: 1; /* Make it visible */
+    margin-top: var(--my-space-md); /* Add some space above it */
+    padding-top: var(--my-space-sm); /* Add some padding inside */
+    border-top: var(--my-border-separator); /* Optional: a subtle separator */
+}
+
+.breed-attribute ul { /* REMINDER for myself: Check for 'breed-attribute' vs 'breed-attributes' in my HTML/CSS */
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align text to the left within the card */
+    font-size: var(--my-font-size-sm);
+    color: var(--my-medium-alt-gray);
+}
+
+.breed-attribute ul li { /* REMINDER for myself: Check for 'breed-attribute' vs 'breed-attributes' in my HTML/CSS */
+    margin-bottom: var(--my-space-xs);
+}
+
+.breed-attribute ul li strong { /* REMINDER for myself: Check for 'breed-attribute' vs 'breed-attributes' in my HTML/CSS */
+    color: var(--my-dark-gray); /* Make the attribute name stand out */
+}
+
+/* Ensure the learn more button is visible below revealed content */
+.learn-more-btn {
+    display: inline-block; /* Essential for proper display */
+    margin-top: var(--my-space-lg); /* Space from content above */
+    color: var(--my-default-blue); /* My default color for the button link */
+    text-decoration: none;
+    font-weight: var(--my-font-weight-bold);
+    transition: color var(--my-transition-speed-fast) var(--my-transition-ease);
+}
+
+.learn-more-btn:hover {
+    text-decoration: underline;
+    color: var(--my-vibrant-orange); /* My consistent hover color for learn more button */
+}
+
+.breed-card a, .tip-card a { /* Using tip-card for now, I'll check my HTML if care-tips-card is preferred */
+    color: var(--my-default-blue); /* My default color for general card links */
+    text-decoration: none;
+    font-weight: var(--my-font-weight-bold);
+}
+
+.tip-card a:hover { /* Using tip-card for now, I'll check my HTML if care-tips-card is preferred */
+    text-decoration: underline;
+    color: var(--my-vibrant-orange); /* My consistent hover color for tip card links */
+}
+
+
+/* Why Dogs Section */
+.why-dogs {
+    background-color: var(--my-section-background-light);
+    color: var(--my-text-color-darkest);
+    padding: var(--my-space-3xl) var(--my-space-lg);
+    max-width: 900px;
+    margin: var(--my-space-4xl) auto;
+    border-radius: var(--my-radius-2xl);
+    box-shadow: var(--my-shadow-why-dogs);
+    line-height: 1.7;
+    font-family: var(--my-font-family-secondary);
+}
+
+.why-dogs h2 {
+    font-size: var(--my-font-size-h2);
+    margin-bottom: var(--my-font-size-base);
+    text-align: center;
+    color: var(--my-heading-dark);
+}
+
+.why-dogs h3 {
+    font-size: var(--my-font-size-h3-md);
+    margin-top: var(--my-space-2xl);
+    color: var(--my-heading-medium);
+}
+
+.why-dogs ol {
+    padding-left: var(--my-space-lg);
+}
+
+.why-dogs li {
+    font-weight: var(--my-font-weight-bold);
+    margin-top: var(--my-space-lg);
+    color: var(--my-black);
+}
+
+.why-dogs p {
+    margin-top: var(--my-space-md); /* Changed from 8px to a variable for consistency */
+    font-size: var(--my-font-size-base);
+    color: var(--my-dark-gray);
+}
+
+
+/* --- Footer Styles --- */
+footer {
+    background-color: var(--my-footer-background);
+    color: var(--my-white);
+    padding: var(--my-space-2xl) 0;
+    text-align: center;
+}
+
+/* Adjust my .background-container within the footer to use flexbox */
+footer .background-container {
+    max-width: 1200px; /* My overall container width */
+    margin: 0 auto; /* Center my container */
+    padding: var(--my-space-lg); /* Padding inside my container */
+
+    display: flex; /* Enable flexbox for my footer items */
+    flex-direction: column; /* Stack items vertically by default (for mobile) */
+    align-items: center; /* Center items horizontally in column layout */
+    gap: var(--my-space-xl); /* Space between my main footer sections (nav, newsletter, social) */
+}
+
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Make list items arrange horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
+    justify-content: center; /* Center my nav links */
+    gap: var(--my-space-md); /* Space between my nav links */
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: var(--my-white);
+    font-weight: var(--my-font-weight-bold);
+    transition: color var(--my-transition-speed-fast) var(--my-transition-ease);
+}
+
+footer nav ul li a:hover {
+    color: var(--my-vibrant-orange); /* My consistent hover color for footer nav links */
+}
+
+/* --- Styles for the Newsletter inside my Footer --- */
+.footer-newsletter {
+    background-color: var(--my-footer-newsletter-bg);
+    padding: var(--my-space-lg);
+    border-radius: var(--my-radius-lg);
+    width: 100%; /* Take full width within its container */
+    max-width: 450px; /* Limit its max width */
+    text-align: center; /* Center text within my newsletter block */
+    box-shadow: var(--my-shadow-footer-newsletter);
+}
+
+.footer-newsletter h3 {
+    color: var(--my-white);
+    margin-top: 0;
+    margin-bottom: var(--my-space-sm);
+    font-size: var(--my-font-size-h3-lg);
+}
+
+.footer-newsletter p {
+    font-size: var(--my-font-size-sm);
+    margin-bottom: var(--my-space-lg);
+    color: var(--my-light-gray);
+}
+
+.footer-newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: var(--my-space-sm);
+    flex-wrap: wrap;
+}
+
+.footer-newsletter input[type="email"] {
+    flex-grow: 1;
+    padding: 12px var(--my-space-md);
+    border: var(--my-border-input);
+    border-radius: var(--my-radius-md);
+    background-color: var(--my-input-background-dark);
+    color: var(--my-white);
+    min-width: 180px;
+}
+
+.footer-newsletter input[type="email"]::placeholder {
+    color: var(--my-lighter-gray);
+}
+
+.footer-newsletter button {
+    background-color: var(--my-default-blue); /* My default blue for subscribe button */
+    color: var(--my-white);
+    padding: 12px var(--my-space-xl);
+    border: none;
+    border-radius: var(--my-radius-md);
+    cursor: pointer;
+    transition: background-color var(--my-transition-speed-fast) var(--my-transition-ease);
+    font-weight: var(--my-font-weight-bold);
+    text-transform: uppercase;
+}
+
+.footer-newsletter button:hover {
+    background-color: var(--my-dark-blue); /* My darker blue on hover */
+}
+
+/* --- Other Footer Elements --- */
+.social-icons {
+    margin-top: var(--my-space-sm);
+    /* My styles for social media icons go here */
+}
+
+.copyright {
+    font-size: var(--my-font-size-xs);
+    color: var(--my-lighter-gray);
+    margin-top: var(--my-space-md);
+}
+
+/* --- My Responsive adjustments for larger screens --- */
+@media (min-width: 768px) {
+    footer .background-container {
+        flex-direction: row; /* My items arranged in a row on larger screens */
+        justify-content: space-around; /* My items distributed space around */
+        align-items: flex-start; /* My items aligned to the top of the row */
+        text-align: left; /* Reset my text alignment for horizontal layout */
+    }
+
+    footer nav ul {
+        flex-direction: column; /* My nav links stacked vertically again */
+        align-items: flex-start; /* My nav links aligned to the left */
+        gap: var(--my-radius-lg); /* Reduced gap for my vertical list */
+    }
+
+    .footer-newsletter {
+        order: 2; /* My adjusted order if needed (e.g., to be in the middle) */
+        text-align: left; /* My text aligned within newsletter block to the left */
+    }
+
+    .footer-newsletter form {
+        justify-content: flex-start; /* My form elements aligned to the left */
+    }
+
+    .social-icons {
+        order: 3; /* My example order */
+        margin-top: 0; /* Reset my margin */
+    }
+
+    .copyright {
+        order: 4; /* My example order */
+        width: 100%; /* My copyright spanning full width */
+        text-align: center; /* My copyright notice centered */
+        margin-top: var(--my-space-xl); /* Added more space above my copyright */
+        padding-top: var(--my-space-md); /* Padding above my top border */
+        border-top: var(--my-border-footer-separator); /* My subtle separator line */
+    }
+}

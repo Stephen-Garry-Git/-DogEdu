@@ -1,0 +1,496 @@
+:root {
+    /* --- Colors --- */
+    --clr-primary-dark-purple: #360259;
+    --clr-accent-orange: #F26B1D;
+    --clr-white: #FFFFFF;
+    --clr-text-dark: #333;
+    --clr-text-medium: #666;
+    --clr-text-medium-alt: #555;
+    --clr-text-light: #ccc;
+    --clr-text-lighter: #aaa; /* For placeholders, copyright */
+    --clr-blue: #007bff;
+    --clr-blue-dark: #0056b3; /* Darker blue for hover states */
+    --clr-black-transparent-50: rgba(0, 0, 0, 0.5); /* For overlays, shadows */
+    --clr-black-transparent-40: rgba(0, 0, 0, 0.4); /* For shadows */
+    --clr-black-transparent-20: rgba(0, 0, 0, 0.2); /* For shadows */
+    --clr-black-transparent-10: rgba(0, 0, 0, 0.1); /* For shadows */
+    --clr-light-gray-border: #eee;
+    --clr-footer-bg: #333;
+    --clr-footer-newsletter-bg: #444;
+    --clr-input-bg-dark: #555;
+    --clr-input-border-dark: #666;
+    --clr-why-dogs-bg: #fdfdfd;
+    --clr-why-dogs-text-primary: #222;
+    --clr-why-dogs-heading-dark: #3b3b3b;
+    --clr-why-dogs-heading-medium: #444;
+    --clr-white-transparent-10: rgba(255,255,255,0.1); /* For footer border */
+
+    /* --- Fonts --- */
+    --ff-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --ff-secondary: Arial, sans-serif; /* Used for why-dogs section */
+
+    /* --- Spacing --- */
+    --space-xxs: 3px;
+    --space-xs: 5px;
+    --space-sm: 10px;
+    --space-md: 15px;
+    --space-lg: 20px;
+    --space-xl: 25px;
+    --space-2xl: 30px;
+    --space-3xl: 40px;
+    --space-4xl: 50px;
+
+    /* --- Font Sizes --- */
+    --fs-base: 1rem;
+    --fs-sm: 0.9em;
+    --fs-xs: 0.85em; /* Copyright */
+    --fs-xxs: 0.8em; /* Newsletter p, tip-card p, why-dogs p */
+    --fs-button-lg: 1.2em; /* Hero button */
+    --fs-button-md: 1em; /* Default button/input */
+    --fs-navbar-logo: 1.5rem;
+    --fs-navbar-link: 500; /* Font weight */
+    --fs-h2: 2rem;
+    --fs-h3-lg: 1.5em; /* Footer newsletter h3 */
+    --fs-h3-md: 1.4rem; /* Why dogs h3 */
+    --fs-h3-sm: 0.95em; /* Breed/Tip card p */
+
+    /* --- Border Radii --- */
+    --radius-sm: 3px;
+    --radius-md: 5px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-hero-btn: 3px 25px 3px 25px;
+
+    /* --- Transitions --- */
+    --transition-speed-fast: 0.3s;
+    --transition-speed-normal: 0.4s;
+    --transition-ease-out: ease-out;
+    --transition-ease: ease;
+
+    /* --- Box Shadows --- */
+    --shadow-default: 0 2px 5px var(--clr-black-transparent-50); /* Adjusted to standard black shadow */
+    --shadow-hover: 0 5px 15px var(--clr-black-transparent-20);
+    --shadow-why-dogs: 0 4px 12px var(--clr-black-transparent-10);
+    --shadow-footer-newsletter: 0 4px 8px var(--clr-black-transparent-20);
+
+    /* --- Grid --- */
+    --grid-gap: 30px;
+    --grid-min-col-width: 280px;
+}
+
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-body);
+}
+
+.navbar {
+    background-color: var(--clr-primary-dark-purple);
+    color: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    font-size: var(--fs-navbar-logo);
+    font-weight: bold;
+}
+
+.navbar .nav-links a {
+    color: var(--clr-white);
+    text-decoration: none;
+    margin-left: var(--space-lg);
+    font-weight: var(--fs-navbar-link);
+    transition: color var(--transition-speed-fast);
+}
+
+.navbar .nav-links a:hover {
+    color: var(--clr-accent-orange);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--clr-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-xxs);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: var(--space-xs);
+    font-size: var(--fs-input);
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    font-size: var(--fs-icon);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section{
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(var(--clr-black-transparent-50), var(--clr-black-transparent-50)), url("1000259270 (1).webp") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+.hero-section .btn{
+    display: inline;
+    background-color: var(--clr-primary-dark-purple);
+    color: var(--clr-white);
+    padding: var(--space-md) var(--space-2xl);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: var(--fs-button-lg);
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: var(--radius-hero-btn);
+    transition: background-color var(--transition-speed-fast) var(--transition-ease);
+}
+.hero-section .btn:hover{
+    color: var(--clr-accent-orange);
+}
+.hero-section a{
+    float: right; /* Consider if this float is truly needed here, might cause layout issues */
+}
+
+
+/* Featured Breeds Section */
+.featured-breeds, .care-tips-preview{
+    padding: var(--space-4xl);
+    /*background-color: ;*/ /* This was empty, so left as is */
+    text-align: center;
+}
+.featured-breeds h2, .care-tips-preview h2{
+    margin-bottom: var(--space-3xl);
+    color: var(--clr-text-dark);
+}
+.breed-grid, .care-tips-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-col-width), 1fr));
+    gap: var(--grid-gap);
+    justify-content: center;
+}
+.breed-card{
+    border: var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    box-shadow: var(--shadow-default);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-speed-fast) var(--transition-ease-out), box-shadow var(--transition-speed-fast) var(--transition-ease-out);
+}
+.care-tips-card{
+    border: var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    box-shadow: var(--shadow-default);
+    transition: transform var(--transition-speed-fast) var(--transition-ease);
+}
+.breed-card:hover{
+    transform: translateY(-10px) scale(1.10);
+    box-shadow: var(--shadow-hover);
+}
+.care-tips-card:hover{
+    transform: translateY(-5px);
+    /*box-shadow: 5px #360259;*/ /* This was commented out, leaving as is */
+}
+
+.breed-card img, .care-tips-card img {
+    max-width: 100%;
+    height: 180px; /* Specific height, not easily variable */
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+}
+
+.breed-card h3{
+    margin-top: 0;
+    color: var(--clr-blue);
+    margin-bottom: var(--space-sm);
+}
+.tip-card h3 { /* Note: This applies to .tip-card, but you use .care-tips-card elsewhere */
+    margin-top: 0;
+    color: var(--clr-blue);
+}
+
+.breed-card p, .tip-card p { /* Note: This applies to .tip-card, but you use .care-tips-card elsewhere */
+    font-size: var(--fs-h3-sm); /* Using a more generic name for paragraph font size */
+    color: var(--clr-text-medium);
+    margin-bottom: var(--space-md);
+}
+
+.breed-attribute{ /* Remember the fix for 'breed-attributes' vs 'breed-attribute' */
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height var(--transition-speed-normal) var(--transition-ease-out),
+                opacity var(--transition-speed-normal) var(--transition-ease-out),
+                margin-top var(--transition-speed-normal) var(--transition-ease-out);
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.breed-card:hover .breed-attribute { /* This should be .breed-attributes based on our discussion */
+    height: auto;
+    opacity: 1;
+    margin-top: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: var(--border-separator);
+}
+
+.breed-attribute ul { /* This should be .breed-attributes based on our discussion */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: var(--fs-sm);
+    color: var(--clr-text-medium-alt);
+}
+
+.breed-attribute ul li { /* This should be .breed-attributes based on our discussion */
+    margin-bottom: var(--space-xs);
+}
+
+.breed-attribute ul li strong { /* This should be .breed-attributes based on our discussion */
+    color: var(--clr-text-dark);
+}
+
+/* Ensure the learn more button is visible below revealed content */
+.learn-more-btn {
+    display: inline-block;
+    margin-top: var(--space-lg);
+    color: var(--clr-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed-fast) var(--transition-ease);
+}
+
+.learn-more-btn:hover {
+    text-decoration: underline;
+    color: var(--clr-blue-dark);
+}
+
+.breed-card a, .tip-card a { /* Note: This applies to .tip-card, but you use .care-tips-card elsewhere */
+    color: var(--clr-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tip-card a:hover { /* Note: This applies to .tip-card, but you use .care-tips-card elsewhere */
+    text-decoration: underline;
+}
+
+/* Why Dogs Section */
+.why-dogs {
+    background-color: var(--clr-why-dogs-bg);
+    color: var(--clr-why-dogs-text-primary);
+    padding: var(--space-3xl) var(--space-lg);
+    max-width: 900px; /* Specific value, kept as is */
+    margin: var(--space-4xl) auto;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-why-dogs);
+    line-height: 1.7; /* Specific value, kept as is */
+    font-family: var(--ff-secondary); /* Using secondary font family */
+}
+
+.why-dogs h2 {
+    font-size: var(--fs-h2);
+    margin-bottom: var(--fs-base); /* Using 1rem as it was 1rem before */
+    text-align: center;
+    color: var(--clr-why-dogs-heading-dark);
+}
+
+.why-dogs h3 {
+    font-size: var(--fs-h3-md);
+    margin-top: var(--space-2xl);
+    color: var(--clr-why-dogs-heading-medium);
+}
+
+.why-dogs ol {
+    padding-left: var(--space-lg);
+}
+
+.why-dogs li {
+    font-weight: bold;
+    margin-top: var(--space-lg);
+    color: var(--clr-black-transparent-40); /* Adjusted to a dark grey */
+}
+
+.why-dogs p {
+    margin-top: var(--space-lg); /* Changed from 8px to a variable */
+    font-size: var(--fs-base); /* Changed from 1rem to base font size */
+    color: var(--clr-text-dark); /* Changed from #333 */
+}
+
+
+/* --- Footer Styles --- */
+footer {
+    background-color: var(--clr-footer-bg);
+    color: var(--clr-white);
+    padding: var(--space-2xl) 0;
+    text-align: center;
+}
+
+/* Adjust .background-container within the footer to use flexbox */
+footer .background-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: var(--clr-white);
+    font-weight: bold;
+    transition: color var(--transition-speed-fast) var(--transition-ease);
+}
+
+footer nav ul li a:hover {
+    color: var(--clr-blue);
+}
+
+/* --- Styles for the Newsletter inside the Footer --- */
+.footer-newsletter {
+    background-color: var(--clr-footer-newsletter-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: var(--shadow-footer-newsletter);
+}
+
+.footer-newsletter h3 {
+    color: var(--clr-white);
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+    font-size: var(--fs-h3-lg);
+}
+
+.footer-newsletter p {
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-lg);
+    color: var(--clr-text-light);
+}
+
+.footer-newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.footer-newsletter input[type="email"] {
+    flex-grow: 1;
+    padding: 12px var(--space-md);
+    border: var(--border-input);
+    border-radius: var(--radius-md);
+    background-color: var(--clr-input-bg-dark);
+    color: var(--clr-white);
+    min-width: 180px;
+}
+
+.footer-newsletter input[type="email"]::placeholder {
+    color: var(--clr-text-lighter);
+}
+
+.footer-newsletter button {
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+    padding: 12px var(--space-xl);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--transition-speed-fast) var(--transition-ease);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-newsletter button:hover {
+    background-color: var(--clr-blue-dark);
+}
+
+/* --- Other Footer Elements --- */
+.social-icons {
+    margin-top: var(--space-sm);
+    /* Styles for your social media icons go here */
+}
+
+.copyright {
+    font-size: var(--fs-xs);
+    color: var(--clr-text-lighter);
+    margin-top: var(--space-md);
+}
+
+/* --- Responsive adjustments for larger screens --- */
+@media (min-width: 768px) {
+    footer .background-container {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    footer nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--radius-lg); /* Using radius-lg as 8px */
+    }
+
+    .footer-newsletter {
+        order: 2;
+        text-align: left;
+    }
+
+    .footer-newsletter form {
+        justify-content: flex-start;
+    }
+
+    .social-icons {
+        order: 3;
+        margin-top: 0;
+    }
+
+    .copyright {
+        order: 4;
+        width: 100%;
+        text-align: center;
+        margin-top: var(--space-xl);
+        padding-top: var(--space-md);
+        border-top: var(--border-footer-separator);
+    }
+}
